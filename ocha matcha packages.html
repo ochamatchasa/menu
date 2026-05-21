@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ochā MATCHA — باقات المناسبات الخاصة</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{--dk:#0D1F15;--fr:#1B3A2D;--sg:#4A7C59;--gd:#C9A84C;--gl:#E2C97A;--cr:#F4EFE6;--wh:#FDFCF9;--tx:#1A1A1A;--mu:#6B7B6E;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Tajawal',sans-serif;background:var(--cr);color:var(--tx);direction:rtl;}
+
+/* HERO */
+.hero{background:var(--fr);padding:52px 24px 44px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 15% 60%,rgba(201,168,76,.07),transparent 55%),radial-gradient(ellipse at 85% 20%,rgba(13,31,21,.7),transparent 60%);}
+.hi{position:relative;max-width:860px;margin:0 auto;text-align:center;}
+.ljp{font-size:12px;letter-spacing:.2em;color:rgba(255,255,255,.4);margin-bottom:8px;}
+.lm{font-family:'Cormorant Garamond',serif;font-size:54px;font-weight:300;color:var(--wh);letter-spacing:.04em;line-height:1;margin-bottom:4px;}
+.lb{display:inline-block;width:30px;height:2px;background:var(--gd);vertical-align:middle;margin:0 2px 7px;}
+.ls{font-size:10px;letter-spacing:.35em;color:rgba(255,255,255,.4);margin-bottom:22px;}
+.hd{width:54px;height:1px;background:var(--gd);margin:0 auto 22px;opacity:.6;}
+.ht{font-size:22px;font-weight:700;color:var(--wh);margin-bottom:8px;line-height:1.5;}
+.hs{font-size:13px;color:rgba(255,255,255,.5);font-weight:300;line-height:1.8;margin-bottom:22px;}
+.pills{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;}
+.pill{border:.5px solid rgba(201,168,76,.4);color:var(--gl);font-size:11px;padding:5px 14px;border-radius:20px;background:rgba(201,168,76,.08);}
+
+/* STRIP */
+.strip{background:var(--dk);padding:12px 24px;text-align:center;}
+.strip p{font-size:11px;letter-spacing:.08em;color:rgba(255,255,255,.28);}
+.strip span{color:var(--gd);margin:0 8px;}
+
+/* NAV */
+.nav{background:var(--wh);border-bottom:.5px solid rgba(27,58,45,.1);position:sticky;top:0;z-index:100;padding:0 24px;}
+.nav-in{max-width:880px;margin:0 auto;display:flex;gap:0;overflow-x:auto;}
+.nav a{display:block;padding:14px 18px;font-size:13px;font-weight:500;color:var(--mu);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;transition:all .15s;}
+.nav a:hover{color:var(--fr);border-bottom-color:var(--gd);}
+
+/* MAIN */
+main{max-width:880px;margin:0 auto;padding:44px 20px 0;}
+.sec{margin-bottom:52px;}
+.sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px;}
+.sn{width:38px;height:38px;border-radius:50%;background:var(--fr);color:var(--gd);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;flex-shrink:0;}
+.st{font-size:20px;font-weight:700;color:var(--fr);}
+.ss{font-size:13px;color:var(--mu);margin-top:2px;}
+
+/* GROUP */
+.gl-wrap{display:flex;align-items:center;gap:12px;margin:20px 0 10px;}
+.gb{background:var(--fr);color:var(--gd);font-size:12px;padding:4px 16px;border-radius:20px;font-weight:500;white-space:nowrap;}
+.gline{flex:1;height:.5px;background:rgba(27,58,45,.18);}
+
+/* PACKAGES */
+.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.pk{background:var(--wh);border:.5px solid rgba(27,58,45,.14);border-radius:16px;padding:18px;cursor:pointer;transition:all .2s;position:relative;overflow:hidden;}
+.pk::after{content:'';position:absolute;top:0;right:0;width:3px;height:100%;background:var(--gd);opacity:0;transition:opacity .2s;}
+.pk:hover{border-color:var(--sg);transform:translateY(-2px);box-shadow:0 8px 24px rgba(15,35,24,.07);}
+.pk.sel{border:1.5px solid var(--fr);}
+.pk.sel::after{opacity:1;}
+.pk-n{font-size:10px;color:var(--mu);margin-bottom:5px;letter-spacing:.05em;}
+.pk-s{font-size:16px;font-weight:700;color:var(--fr);margin-bottom:3px;}
+.pk-m{font-size:12px;color:var(--mu);margin-bottom:14px;}
+.pk-p{font-size:23px;font-weight:700;color:var(--fr);}
+.pk-p em{font-size:12px;font-weight:400;color:var(--mu);font-style:normal;margin-right:2px;}
+.pk-note{font-size:11px;color:var(--mu);margin-top:3px;}
+
+/* MENU BADGE */
+.mbadge{display:inline-block;font-size:11px;padding:3px 10px;border-radius:20px;margin-bottom:12px;}
+.mb-a{background:#E1F5EE;color:#0F6E56;}
+.mb-b{background:#E6F1FB;color:#185FA5;}
+.mb-c{background:#FAEEDA;color:#633806;}
+
+/* DESSERT */
+.dn{background:linear-gradient(135deg,rgba(27,58,45,.05),rgba(201,168,76,.07));border:.5px solid rgba(201,168,76,.3);border-radius:12px;padding:14px 18px;font-size:13px;color:var(--fr);margin-bottom:18px;line-height:1.8;}
+.tl{font-size:10px;font-weight:700;letter-spacing:.12em;color:var(--mu);margin:16px 0 8px;display:flex;align-items:center;gap:8px;}
+.tl::after{content:'';flex:1;height:.5px;background:rgba(0,0,0,.08);}
+.dg{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:8px;}
+.dc{background:var(--wh);border:.5px solid rgba(27,58,45,.12);border-radius:12px;padding:11px 14px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;transition:all .15s;}
+.dc:hover{border-color:var(--sg);background:rgba(74,124,89,.04);}
+.dc.sel{border:1.5px solid var(--fr);background:rgba(27,58,45,.04);}
+.dn2{font-size:13px;font-weight:500;}
+.dpw{text-align:left;}
+.dpr{font-size:15px;font-weight:700;color:var(--fr);}
+.dun{font-size:11px;color:var(--mu);}
+.trg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+.tr{background:var(--wh);border:.5px solid rgba(201,168,76,.3);border-radius:12px;padding:14px;cursor:pointer;transition:all .15s;text-align:center;}
+.tr:hover{border-color:var(--gd);background:rgba(201,168,76,.04);}
+.tr.sel{border:1.5px solid var(--gd);background:rgba(201,168,76,.07);}
+.tr-n{font-size:12px;color:var(--mu);margin-bottom:6px;}
+.tr-p{font-size:18px;font-weight:700;color:var(--fr);}
+.tr-s{font-size:11px;color:var(--sg);margin-top:3px;}
+
+/* CALC */
+.calc{background:var(--fr);border-radius:20px;padding:28px;color:var(--wh);}
+.cph{text-align:center;color:rgba(255,255,255,.35);font-size:14px;padding:20px 0;}
+.cr{display:flex;justify-content:space-between;align-items:flex-start;padding:10px 0;border-bottom:.5px solid rgba(255,255,255,.1);font-size:14px;}
+.cr:last-of-type{border-bottom:none;}
+.cl{color:rgba(255,255,255,.5);}
+.cv{font-weight:500;text-align:left;}
+.ct{display:flex;justify-content:space-between;align-items:center;margin-top:16px;padding-top:16px;border-top:1px solid rgba(201,168,76,.35);}
+.ctl{font-size:16px;font-weight:700;}
+.ctv{font-size:34px;font-weight:700;color:var(--gd);}
+.ctv em{font-size:15px;font-weight:400;color:var(--gl);font-style:normal;margin-right:5px;}
+.creset{margin-top:14px;background:none;border:.5px solid rgba(255,255,255,.2);color:rgba(255,255,255,.45);padding:7px 18px;border-radius:20px;font-family:'Tajawal',sans-serif;font-size:12px;cursor:pointer;transition:all .15s;}
+.creset:hover{border-color:rgba(255,255,255,.4);color:rgba(255,255,255,.8);}
+
+/* POLICIES */
+.pol-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;}
+.pol{background:var(--wh);border-radius:16px;padding:22px 20px;border:.5px solid rgba(27,58,45,.12);position:relative;overflow:hidden;}
+.pol::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;}
+.pol-bk::before{background:#2D5A3D;}
+.pol-rd::before{background:#C0392B;}
+.pol-yw::before{background:var(--gd);}
+.pol-bl::before{background:#185FA5;}
+.pol-gr::before{background:#888780;}
+.pol-icon{font-size:24px;margin-bottom:12px;display:block;}
+.pol-title{font-size:15px;font-weight:700;color:var(--fr);margin-bottom:12px;}
+.pol-body{font-size:13px;color:var(--tx);line-height:1.9;}
+.pol-body li{margin-bottom:6px;padding-right:4px;}
+.pol-body ul{list-style:none;padding:0;}
+.pol-body ul li::before{content:'—';margin-left:6px;color:var(--gd);}
+.pol-tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:20px;margin-left:4px;font-weight:500;}
+.pt-g{background:#E1F5EE;color:#0F6E56;}
+.pt-y{background:#FAEEDA;color:#633806;}
+.pt-r{background:#FCEBEB;color:#A32D2D;}
+
+/* FOOTER */
+footer{background:var(--dk);color:var(--wh);text-align:center;padding:56px 24px 44px;margin-top:0;}
+.fjp{font-size:12px;letter-spacing:.2em;color:rgba(255,255,255,.3);margin-bottom:6px;}
+.flogo{font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:300;letter-spacing:.05em;color:var(--wh);line-height:1;margin-bottom:3px;}
+.fsub{font-size:10px;letter-spacing:.35em;color:rgba(255,255,255,.3);margin-bottom:18px;}
+.fdiv{width:48px;height:1px;background:var(--gd);margin:18px auto;opacity:.6;}
+.fq{font-size:21px;font-weight:700;margin-bottom:6px;line-height:1.5;}
+.fqs{font-size:13px;color:rgba(255,255,255,.45);font-weight:300;margin-bottom:28px;}
+.ctg{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:560px;margin:0 auto 22px;}
+.ctc{border:.5px solid rgba(255,255,255,.13);border-radius:12px;padding:14px;}
+.ctl2{font-size:9px;letter-spacing:.2em;color:rgba(255,255,255,.3);margin-bottom:5px;}
+.ctv2{font-size:14px;font-weight:500;}
+.fbt{font-size:10px;letter-spacing:.1em;color:rgba(255,255,255,.18);margin-top:12px;}
+.fbt span{color:rgba(201,168,76,.35);margin:0 7px;}
+
+/* RESPONSIVE */
+@media(max-width:640px){.pg,.trg,.ctg{grid-template-columns:1fr;}.lm{font-size:40px;}.ctv{font-size:26px;}}
+@media(max-width:800px){.pg{grid-template-columns:repeat(2,1fr);}}
+
+@keyframes fu{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+.hero{animation:fu .5s ease both;}
+.sec{animation:fu .5s ease both;}
+footer{animation:fu .5s .4s ease both;}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hi">
+    <div class="ljp">お茶</div>
+    <div class="lm">och<span class="lb"></span>a</div>
+    <div class="ls">MATCHA</div>
+    <div class="hd"></div>
+    <div class="ht">ماتشا أصيلة، تجربة راقية،<br>وخدمة ضيافة تليق بمناسبتكم</div>
+    <div class="hs">مدة التقديم ساعتان · الساعة الإضافية ٣٠٠ ريال · الكوب الإضافي ٤٠ ريال<br>جميع الباقات تشمل التنقل داخل الرياض</div>
+    <div class="pills">
+      <span class="pill">٥ مشروبات في المنيو</span>
+      <span class="pill">حلا اختياري</span>
+      <span class="pill">داخلي وخارجي</span>
+
+    </div>
+  </div>
+</header>
+
+<div class="strip">
+  <p>PREMIUM MATCHA HOSPITALITY <span>·</span> الرياض، المملكة العربية السعودية <span>·</span> +966 55 110 7485 <span>·</span> @ochamatchasa</p>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-in">
+    <a href="#packages">الباقات</a>
+    <a href="#dessert">منيو الحلا</a>
+    <a href="#calc">الحاسبة</a>
+    <a href="#policies">السياسات</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- ١ PACKAGES -->
+<div class="sec" id="packages">
+  <div class="sec-head">
+    <div class="sn">١</div>
+    <div><div class="st">اختاري باقتك</div><div class="ss">الأسعار لا تشمل الحلا — يُضاف بشكل منفصل حسب اختيارك</div></div>
+  </div>
+
+  <div class="gl-wrap"><span class="gb">المجموعة الأولى — ٢٠ شخص</span><div class="gline"></div></div>
+  <div class="pg">
+    <div class="pk" onclick="sp(this,1,20,1900)">
+      <div class="pk-n">الباقة الأولى</div>
+      <div class="pk-s">ذاتية</div>
+      <span class="mbadge mb-a">نوعان تختارهم</span>
+      <div class="pk-p">١٬٩٠٠<em>ريال</em></div>
+      <div class="pk-note">بدون حلا</div>
+    </div>
+    <div class="pk" onclick="sp(this,2,20,2200)">
+      <div class="pk-n">الباقة الثانية</div>
+      <div class="pk-s">عاملة</div>
+      <span class="mbadge mb-b">٤ أنواع</span>
+      <div class="pk-p">٢٬٢٠٠<em>ريال</em></div>
+      <div class="pk-note">بدون حلا</div>
+    </div>
+    <div class="pk" onclick="sp(this,3,20,2800)">
+      <div class="pk-n">الباقة الثالثة</div>
+      <div class="pk-s">عاملتان</div>
+      <span class="mbadge mb-c">٥ أنواع — المنيو كامل</span>
+      <div class="pk-p">٢٬٨٠٠<em>ريال</em></div>
+      <div class="pk-note">بدون حلا</div>
+    </div>
+  </div>
+
+  <div class="gl-wrap" style="margin-top:20px;"><span class="gb">المجموعة الثانية — ٤٠ شخص</span><div class="gline"></div></div>
+  <div class="pg">
+    <div class="pk" onclick="sp(this,4,40,2100)">
+      <div class="pk-n">الباقة الرابعة</div>
+      <div class="pk-s">ذاتية</div>
+      <span class="mbadge mb-a">نوعان تختارهم</span>
+      <div class="pk-p">٢٬١٠٠<em>ريال</em></div>
+      <div class="pk-note">بدون حلا</div>
+    </div>
+    <div class="pk" onclick="sp(this,5,40,2600)">
+      <div class="pk-n">الباقة الخامسة</div>
+      <div class="pk-s">عاملة</div>
+      <span class="mbadge mb-b">٤ أنواع</span>
+      <div class="pk-p">٢٬٦٠٠<em>ريال</em></div>
+      <div class="pk-note">بدون حلا</div>
+    </div>
+    <div class="pk" onclick="sp(this,6,40,3200)">
+      <div class="pk-n">الباقة السادسة</div>
+      <div class="pk-s">عاملتان</div>
+      <span class="mbadge mb-c">٥ أنواع — المنيو كامل</span>
+      <div class="pk-p">٣٬٢٠٠<em>ريال</em></div>
+      <div class="pk-note">بدون حلا</div>
+    </div>
+  </div>
+
+  <div class="gl-wrap" style="margin-top:20px;"><span class="gb">المجموعة الثالثة — ٨٠ شخص</span><div class="gline"></div></div>
+  <div class="pg">
+    <div class="pk" onclick="sp(this,7,80,2500)">
+      <div class="pk-n">الباقة السابعة</div>
+      <div class="pk-s">ذاتية</div>
+      <span class="mbadge mb-a">نوعان تختارهم</span>
+      <div class="pk-p">٢٬٥٠٠<em>ريال</em></div>
+      <div class="pk-note">بدون حلا</div>
+    </div>
+    <div class="pk" onclick="sp(this,8,80,3300)">
+      <div class="pk-n">الباقة الثامنة</div>
+      <div class="pk-s">عاملة</div>
+      <span class="mbadge mb-b">٤ أنواع</span>
+      <div class="pk-p">٣٬٣٠٠<em>ريال</em></div>
+      <div class="pk-note">بدون حلا</div>
+    </div>
+    <div class="pk" onclick="sp(this,9,80,3900)">
+      <div class="pk-n">الباقة التاسعة</div>
+      <div class="pk-s">عاملتان</div>
+      <span class="mbadge mb-c">٥ أنواع — المنيو كامل</span>
+      <div class="pk-p">٣٬٩٠٠<em>ريال</em></div>
+      <div class="pk-note">بدون حلا</div>
+    </div>
+  </div>
+</div>
+
+<!-- ٢ DESSERT -->
+<div class="sec" id="dessert">
+  <div class="sec-head">
+    <div class="sn">٢</div>
+    <div><div class="st">منيو الحلا — اختياري</div><div class="ss">يُضاف على إجمالي الباقة بشكل شفاف — لا مفاجآت</div></div>
+  </div>
+  <div class="dn">✦ اختاري نوع الحلا المناسب لمناسبتك وسيُحسب تلقائياً في الإجمالي أدناه</div>
+
+  <div class="tl">اقتصادي</div>
+  <div class="dg">
+    <div class="dc" onclick="sd(this,'مفن فانيلا بالشوكولا',9,'per')"><span class="dn2">مفن فانيلا بالشوكولا</span><div class="dpw"><div class="dpr">٩</div><div class="dun">ر / شخص</div></div></div>
+    <div class="dc" onclick="sd(this,'كرات جوز الهند',10,'per')"><span class="dn2">كرات جوز الهند</span><div class="dpw"><div class="dpr">١٠</div><div class="dun">ر / شخص</div></div></div>
+    <div class="dc" onclick="sd(this,'كرات كوكنت شوكولا',10,'per')"><span class="dn2">كرات كوكنت شوكولا</span><div class="dpw"><div class="dpr">١٠</div><div class="dun">ر / شخص</div></div></div>
+  </div>
+
+  <div class="tl">وسط</div>
+  <div class="dg">
+    <div class="dc" onclick="sd(this,'كيكة البرتقال بالشوكولا',12,'per')"><span class="dn2">كيكة البرتقال بالشوكولا</span><div class="dpw"><div class="dpr">١٢</div><div class="dun">ر / شخص</div></div></div>
+    <div class="dc" onclick="sd(this,'كيكة ليمون',12,'per')"><span class="dn2">كيكة ليمون</span><div class="dpw"><div class="dpr">١٢</div><div class="dun">ر / شخص</div></div></div>
+    <div class="dc" onclick="sd(this,'كيكة الماربل',12,'per')"><span class="dn2">كيكة الماربل</span><div class="dpw"><div class="dpr">١٢</div><div class="dun">ر / شخص</div></div></div>
+    <div class="dc" onclick="sd(this,'روكي رود',13,'per')"><span class="dn2">روكي رود</span><div class="dpw"><div class="dpr">١٣</div><div class="dun">ر / شخص</div></div></div>
+  </div>
+
+  <div class="tl">مميز</div>
+  <div class="dg">
+    <div class="dc" onclick="sd(this,'تشيك كيك مانجو',16,'per')"><span class="dn2">تشيك كيك مانجو</span><div class="dpw"><div class="dpr">١٦</div><div class="dun">ر / شخص</div></div></div>
+    <div class="dc" onclick="sd(this,'كوكنت كيك',16,'per')"><span class="dn2">كوكنت كيك</span><div class="dpw"><div class="dpr">١٦</div><div class="dun">ر / شخص</div></div></div>
+    <div class="dc" onclick="sd(this,'بلو بيري كوكنت كيك بالليمون',16,'per')"><span class="dn2">بلو بيري كوكنت كيك بالليمون</span><div class="dpw"><div class="dpr">١٦</div><div class="dun">ر / شخص</div></div></div>
+  </div>
+
+  <div class="tl" style="margin-top:20px;">صواني — ١٥ قطعة للصينية</div>
+  <div class="trg">
+    <div class="tr" onclick="sd(this,'صينية كوكنت بالتوت',200,'tray')"><div class="tr-n">صينية كوكنت بالتوت</div><div class="tr-p">٢٠٠ ريال</div><div class="tr-s">١٥ قطعة / صينية</div></div>
+    <div class="tr" onclick="sd(this,'صينية كوكنت بلوبيري بالليمون',200,'tray')"><div class="tr-n">صينية كوكنت بلوبيري بالليمون</div><div class="tr-p">٢٠٠ ريال</div><div class="tr-s">١٥ قطعة / صينية</div></div>
+    <div class="tr" onclick="sd(this,'صينية شوكو أحمد الزامل',230,'tray')"><div class="tr-n">صينية شوكو أحمد الزامل</div><div class="tr-p">٢٣٠ ريال</div><div class="tr-s">١٥ قطعة / صينية</div></div>
+  </div>
+</div>
+
+<!-- ٣ CALCULATOR -->
+<div class="sec" id="calc">
+  <div class="sec-head">
+    <div class="sn">٣</div>
+    <div><div class="st">حاسبة الإجمالي</div><div class="ss">اختاري الباقة والحلا وشوفي التفاصيل فوراً</div></div>
+  </div>
+  <div class="calc"><div id="co"><div class="cph">اختاري باقة من الأعلى لتبدأ الحاسبة ✦</div></div></div>
+</div>
+
+<!-- ٤ POLICIES -->
+<div class="sec" id="policies">
+  <div class="sec-head">
+    <div class="sn">٤</div>
+    <div><div class="st">السياسات</div><div class="ss">نحرص على الشفافية الكاملة مع عميلاتنا</div></div>
+  </div>
+  <div class="pol-grid">
+
+    <div class="pol pol-bk">
+      <span class="pol-icon">📋</span>
+      <div class="pol-title">سياسة الحجز</div>
+      <div class="pol-body">
+        <ul>
+          <li>يُعدّ الحجز مؤكداً عند سداد <strong>٥٠٪ من إجمالي الباقة</strong> كدفعة أولى</li>
+          <li>يُسدَّد المبلغ المتبقي كاملاً <strong>قبل يوم واحد</strong> من موعد الفعالية</li>
+          <li>الموعد غير مضمون قبل استلام الدفعة الأولى</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pol pol-rd">
+      <span class="pol-icon">🗓</span>
+      <div class="pol-title">سياسة الإلغاء</div>
+      <div class="pol-body">
+        <ul>
+          <li>قبل ٧ أيام أو أكثر <span class="pol-tag pt-g">استرداد ٨٠٪</span></li>
+          <li>قبل ٤ أيام <span class="pol-tag pt-y">استرداد ٥٠٪</span></li>
+          <li>قبل ٤٨ ساعة أو أقل <span class="pol-tag pt-r">لا تسترد</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pol pol-yw">
+      <span class="pol-icon">🔄</span>
+      <div class="pol-title">سياسة التأجيل</div>
+      <div class="pol-body">
+        <ul>
+          <li>يُسمح بالتأجيل <strong>مرة واحدة فقط</strong> مجاناً</li>
+          <li>يشترط الإشعار <strong>قبل ٧٢ ساعة</strong> على الأقل</li>
+          <li>الموعد الجديد خلال <strong>٣٠ يوماً</strong> من الأصلي</li>
+          <li>بعد انتهاء المدة يُعامَل كإلغاء</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pol pol-bl">
+      <span class="pol-icon">📍</span>
+      <div class="pol-title">سياسة المكان</div>
+      <div class="pol-body">
+        <ul>
+          <li>مساحة لا تقل عن <strong>١٦٠×٨٠ سم</strong> للعربة</li>
+          <li>توفر <strong>مفتاح كهرباء</strong> في محيط قريب</li>
+          <li>في حال تعذّر توفير أي شرط يوم الفعالية — تُلغى الفعالية ويُعاد <strong>المبلغ كاملاً</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pol pol-gr">
+      <span class="pol-icon">🤝</span>
+      <div class="pol-title">القوة القاهرة</div>
+      <div class="pol-body">
+        <ul>
+          <li>أوامر حكومية أو منع التجمعات</li>
+          <li>حالة طوارئ صحية مُعلنة</li>
+          <li>عطل مفاجئ في العربة لا يمكن إصلاحه</li>
+        </ul>
+        <p style="margin-top:10px;padding-top:10px;border-top:.5px solid rgba(0,0,0,.08);">في هذه الحالات يُعفى الطرفان من رسوم الإلغاء كاملاً ويُردّ المبلغ المدفوع.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fjp">お茶</div>
+  <div class="flogo">ochā</div>
+  <div class="fsub">MATCHA</div>
+  <div class="fdiv"></div>
+  <div class="fq">"نسعد بأن نكون جزءاً من مناسبتكم"</div>
+  <div class="fqs">كل تفصيل يصنع الفرق من أول كوب إلى آخر لحظة</div>
+  <div class="ctg">
+    <div class="ctc"><div class="ctl2">INSTAGRAM</div><div class="ctv2">@ochamatchasa</div></div>
+    <div class="ctc"><div class="ctl2">WHATSAPP</div><div class="ctv2">+966 55 110 7485</div></div>
+    <div class="ctc"><div class="ctl2">LOCATION</div><div class="ctv2">الرياض · السعودية</div></div>
+  </div>
+  <div class="fbt">PREMIUM MATCHA HOSPITALITY <span>·</span> RIYADH <span>·</span> 2026</div>
+</footer>
+
+<script>
+let P=null,D=null;
+const N=['','الأولى','الثانية','الثالثة','الرابعة','الخامسة','السادسة','السابعة','الثامنة','التاسعة'];
+const ar=n=>n.toLocaleString('ar-EG');
+
+function sp(el,num,pax,price){
+  document.querySelectorAll('.pk').forEach(c=>c.classList.remove('sel'));
+  el.classList.add('sel');
+  P={num,pax,price};
+  render();
+  document.getElementById('calc').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function sd(el,name,price,type){
+  document.querySelectorAll('.dc,.tr').forEach(c=>c.classList.remove('sel'));
+  el.classList.add('sel');
+  D={name,price,type};
+  render();
+}
+
+function render(){
+  const el=document.getElementById('co');
+  if(!P){el.innerHTML='<div class="cph">اختاري باقة من الأعلى لتبدأ الحاسبة ✦</div>';return;}
+  let dc=0,dl='';
+  if(D){
+    if(D.type==='per'){
+      dc=D.price*P.pax;
+      dl=`<div class="cr"><span class="cl">نوع الحلا</span><span class="cv">${D.name}</span></div>
+          <div class="cr"><span class="cl">حساب الحلا</span><span class="cv">${ar(D.price)} ر × ${ar(P.pax)} شخص = ${ar(dc)} ريال</span></div>`;
+    } else {
+      const t=Math.ceil(P.pax/15);
+      dc=D.price*t;
+      dl=`<div class="cr"><span class="cl">نوع الحلا</span><span class="cv">${D.name}</span></div>
+          <div class="cr"><span class="cl">عدد الصواني</span><span class="cv">${ar(t)} صواني (${ar(P.pax)} شخص ÷ ١٥)</span></div>
+          <div class="cr"><span class="cl">حساب الصواني</span><span class="cv">${ar(t)} × ${ar(D.price)} ريال = ${ar(dc)} ريال</span></div>`;
+    }
+  }
+  const tot=P.price+dc;
+  el.innerHTML=`
+    <div class="cr"><span class="cl">الباقة المختارة</span><span class="cv">الباقة ${N[P.num]} — ${ar(P.pax)} شخص</span></div>
+    <div class="cr"><span class="cl">سعر الباقة</span><span class="cv">${ar(P.price)} ريال</span></div>
+    ${dl}
+    <div class="ct">
+      <span class="ctl">الإجمالي${D?' مع الحلا':''}</span>
+      <span class="ctv"><em>ريال</em>${ar(tot)}</span>
+    </div>
+    <button class="creset" onclick="rst()">إعادة الاختيار</button>`;
+}
+
+function rst(){
+  P=null;D=null;
+  document.querySelectorAll('.pk,.dc,.tr').forEach(c=>c.classList.remove('sel'));
+  render();
+}
+</script>
+</body>
+</html>
